@@ -6,6 +6,9 @@ is built using spyne toolkit for RPC with HttpRpc as input protocol and JSON
 as output.
 
 Author: Sanisha Rehan
+
+Example Call: http://localhost:8000/checkcrime?lat=37.334164&lon=-121.884301&radius=0.002
+http://localhost:8000/say_hello?name=Sanisha&times=8
 """
 
 import logging
