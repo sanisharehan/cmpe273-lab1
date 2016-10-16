@@ -28,13 +28,11 @@ from urllib2 import urlopen
 import json
 import datetime
 
-
 # Define URL String
 URL_TO_OPEN = 'https://api.spotcrime.com/crimes.json?lat=%f&lon=%f&radius=%f&key=.'
 ADDRESS_KEY = 'address'
 TIME_KEY = 'date'
 TYPE_KEY = 'type'
-
 
 # Define keys for final JSON/result
 TOTAL_CRIME = "total_crime"
