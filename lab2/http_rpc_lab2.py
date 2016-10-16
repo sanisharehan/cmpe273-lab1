@@ -66,27 +66,28 @@ def generate_crime_report(crimes_list):
             # Get address counts
             if key == ADDRESS_KEY:
                 str_addr = []
-                # Split by OF
+                # Split by OF e.g. 100 BLOCK OF S PASTORIA AV
                 split_addr = val.split('OF')
                 if len(split_addr) > 1:
                     str_addr.append(split_addr[1])
                 else:
-                    # Split by BLOCK
+                    # Split by BLOCK e.g. 200 BLOCK BLOCK HOMESTEAD RD
                     split_addr = val.split('BLOCK')
                     if len(split_addr) > 1:
                         str_addr.append(split_addr[len(split_addr) - 1])
                     else:
-                        # Split by &
+                        # Split by & e.g. S 7TH ST & KEYES ST
                         split_addr = val.split('&')
                         if len(split_addr) > 1:
                             for street in split_addr:
                                 str_addr.append(street)
                         else:
-                            # Split by AND
+                            # Split by AND e.g. THOMPSON PL AND DE GUIGNE DR
                             split_addr = val.split('AND')
                             if len(split_addr) > 1:
                                 for street in split_addr:
-                                    str_addr.append(street)          
+                                    str_addr.append(street)
+                # Else the name is a proper street name e.g. E SANTA CLARA ST
                 if len(split_addr) == 1:
                     str_addr.append(val)
                 
